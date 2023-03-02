@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: apps/v1
+metadata:
+  name: ci-cd_Deploy
+  labels: 
+    app: ci-cd_Deploy
+spec:
+  ports:
+    - port: 80
+      targetport: 80
+      nodeport: 31200
+  selector:
+    app: ci-cd_Deploy
+  type: LoadBalancer
